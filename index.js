@@ -3,7 +3,7 @@ import wrapComponent from 'wrap-component';
 
 const identity = val => val;
 
-export default function context(
+export default function mapContext(
   contextTypes = {},
   mapContext = identity,
   childContextTypes = {}
@@ -19,5 +19,6 @@ export default function context(
     }
     Context.contextTypes = contextTypes;
     Context.childContextTypes = childContextTypes;
+    return Context;
   });
 }
